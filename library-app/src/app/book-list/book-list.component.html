@@ -1,0 +1,37 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+<h2>Books Library</h2>
+<div *ngIf="books.length > 0">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"style="width: 10%">Id</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Date Added</th>
+        <th scope="col">Summary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{book.id}}</td>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.isbn}}</td>
+        <td>{{book.dateAdded}}</td>
+        <td>{{book.summary}}</td>
+        <td className="center-align"><button class="btn btn-info" [routerLink]="['/edit-book', book.id]">EDIT</button></td>
+        <td className="center-align"><button class="btn btn-danger" (click)="deleteBook(book)">DELETE</button></td>
+      </tr>
+  </tbody>
+
+  </table>
+</div>
+<div *ngIf="books.length == 0">
+  There are no books in the library.
+</div>
+
+<div>
+  <button class="btn btn-info" [routerLink]="['/add-book']">Add a Book</button>
+</div>

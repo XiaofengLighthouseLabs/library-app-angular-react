@@ -1,0 +1,36 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+
+<h3>Add a Book</h3>
+
+ <form>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input class="form-control" name="title" type="text" [(ngModel)]="book.title" id="title">
+  </div>
+  <div class="form-group">
+    <label for="author">Author</label>
+    <input class="form-control" name="author" type="text" [(ngModel)]="book.author" id="author">
+  </div>
+  <div class="form-group">
+    <label for="isbn">ISBN</label>
+    <input class="form-control" name="isbn" type="text" [(ngModel)]="book.isbn" id="isbn">
+  </div>
+  <div class="form-group">
+    <label for="dateAdded">Date Added</label>
+    <input class="form-control" name="dateAdded" type="text" [(ngModel)]="book.dateAdded" id="dateAdded">
+  </div>
+  <div class="form-group">
+    <label for="summary">Summary</label>
+    <input class="form-control" name="summary" type="text" [(ngModel)]="book.summary" id="summary">
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary" (click)="addBook()">Add a Book</button>
+    </div>
+    <div class="col">
+      <button class="btn btn-danger" (click)="cancelUpdate()">Cancel</button>
+    </div>
+  </div>
+
+</form>
+
